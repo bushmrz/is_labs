@@ -104,7 +104,7 @@ vector<int> task_a(vector < vector <string> > ruleMatr) // список объе
 			}
 		}
 		if (f) {
-			answer.push_back(j + 1);
+			answer.push_back(j+1);
 		}
 	}
 	return answer;
@@ -174,8 +174,7 @@ vector<int> task_e(vector < vector <string> > ruleMatr) // список один
 					break;
 				}
 				fullRule = true;
-			}
-			else if (isCanWrite(ruleMatr[i][j])) {
+			} else if (isCanWrite(ruleMatr[i][j])) {
 				f = false;
 				break;
 			}
@@ -213,6 +212,7 @@ void main()
 	int k; // число генераций команд
 	n = rand() % 5 + 1;
 	m = rand() % 5 + 1;
+	cout << n << endl;
 
 	vector < vector <string> > RW(n, vector <string>(m));
 	vector <int> LS(n); // уровни допуска субъектов s
@@ -242,12 +242,12 @@ void main()
 	}
 	access_matr.close();
 
-	vector < vector <string> > ruleMatr = getRuleMatr();
+	vector < vector <string> > ruleMatr =  getRuleMatr();
 	cout << "Список пустых объектов" << endl;
 	coutVector(task_a(ruleMatr));
 	cout << "Список пустых субъектов" << endl;
 	coutVector(task_b(ruleMatr));
-	cout << "Список полных объектов" << endl;
+	cout << "Список субъектов с фул допуском к объектам" << endl;
 	coutVector(task_c(ruleMatr));
 	cout << "Список редакторов по объектам" << endl;
 	coutVectors(task_d(ruleMatr));
